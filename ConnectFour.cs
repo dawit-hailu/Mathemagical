@@ -1,4 +1,15 @@
-﻿using System;
+﻿/*
+  written by: Dawit Hailu
+  objective:
+    A C# script for a 7x6 two player Connect4 game
+    
+  check it out in action! simply go to the link and click run. 
+  repl: https://repl.it/OEIN/4
+  
+  contact: davucan@gmail.com
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
