@@ -141,7 +141,10 @@ namespace Connect4
         private static void RenderBoard(List<List<int>> board)
         {
             Console.Clear();
-            Console.WriteLine(" =                           =");
+            
+            //this line is to clear screen on repl.it so, can be removed for a local run
+            for(int i=0;i<55;i++){Console.WriteLine("");}
+            
             Console.WriteLine(" -----------------------------");
             for (int i = 5; i >= 0; i--)
             {
@@ -157,8 +160,6 @@ namespace Connect4
                 Console.WriteLine(" -----------------------------");
 
             }
-            Console.WriteLine(" ==                         ==");
-            //Console.ReadKey();
         }
     }
 }
