@@ -1,10 +1,15 @@
 /*
   written: by Dawit Hailu
   objective: 
-      given two rectangles A and B, 
-      with top left coordinates (x, y) and bottom right coordinates (x', y')
-      such that x <= x' and y >= y'
-      find if A and B intersect
+    given two rectangles A and B, 
+    with top left coordinates (x, y) and bottom right coordinates (x', y')
+    such that x <= x' and y >= y'
+    find if A and B intersect
+    
+    check it out in action! simply go to the link and click run.
+    repl: https://repl.it/ODrO/5
+  
+  contact: davucan@gmail.com
 */
 
 using System;
