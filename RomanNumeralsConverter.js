@@ -1,14 +1,4 @@
-/*
-  Author: Dawit Hailu
-  objective:
-    given given an Integer, return coresponding Roman Numeral representation where 0 < n < 100,000.
-    simple eg: 10 >> "X"
-    
-    check it out in action! simply go to the link and click run.
-    repl link: https://repl.it/OEFE/5
 
-  contact: davucan@gmail.com
-*/
 //used 10 for the sake of simplicity
 numeralConverter(10);
 //=> "X"
@@ -51,3 +41,14 @@ function numeralConverter(input_number, result) {
   number -= left_most_digit * Math.pow(10, exponent_factor);
   return (exponent_factor === 0) ? result : numeralConverter(number, result);
 }
+/*
+  Author: Dawit Hailu
+  objective:
+    given given an Integer, return coresponding Roman Numeral representation where 0 < n < 100,000.
+    simple eg: 10 >> "X"
+    
+    check it out in action! simply go to the link and click run.
+    repl link: https://repl.it/OEFE/7
+
+  contact: davucan@gmail.com
+*/
