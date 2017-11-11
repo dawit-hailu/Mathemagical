@@ -5,27 +5,49 @@
     simple eg: 10 >> "X"
     
     check it out in action! simply go to the link and click run.
-    repl link: https://repl.it/OEFE/3
+    repl link: https://repl.it/OEFE/5
 
   contact: davucan@gmail.com
 */
-
+//used 10 for the sake of simplicity
 numeralConverter(10);
+//=> "X"
 
-function numeralConverter(numString, str) {
-  str = str ? str:"";
-  var number = Math.floor(numString);
-  var rom_sym = [["I","V"],["X","L"],["C","D"],["M",""]]
-  var indx = String(number).length - 1;
-  var denum = number / Math.pow(10, indx);
-  denum = Math.floor(denum);
-  var array = [];
+function numeralConverter(input_number, result) {
+  //check if this is the first run(recursion), if so assign empty string to result
+  result = result ? result : "";
 
-  array.push(Math.floor(denum/5), denum %5);
+  //roud down the number to the nearest integer
+  var number = Math.floor(input_number);
 
-  str += (array[1] == 4) ? (rom_sym[indx][0] + rom_sym[array[0] + indx][1 - array[0]]) :
-  (rom_sym[indx][1].repeat(array[0])  + rom_sym[indx][0].repeat(array[1]));
-  number -= denum * Math.pow(10, indx);
-  numString = String(number);
-  return (indx === 0) ? str : numeralConverter(number, str);
+  //roman symbol reference dictionary
+  var roman_symbol_reference = [["I","V"],["X","L"],["C","D"],["M","(V)"],["(X)","(L)"]]
+
+  //get exponent magnitued
+  //=> 1 for our example
+  var exponent_factor = String(number).length - 1;
+
+  //calculate first digit
+  // 10/10^1 => 1
+  var left_most_digit = number / Math.pow(10, exponent_factor);
+  left_most_digit = Math.floor(left_most_digit);
+  var temp_array = [];
+
+  //calculate symbol indeces
+  temp_array.push(Math.floor(left_most_digit/5), left_most_digit %5);
+
+  result += (temp_array[1] == 4) ?
+        (
+          roman_symbol_reference[exponent_factor][0]
+          + roman_symbol_reference[temp_array[0] + 
+          exponent_factor][1 - temp_array[0]]
+        ) 
+        :
+        (
+          roman_symbol_reference[exponent_factor][1].repeat(temp_array[0])  + roman_symbol_reference[exponent_factor][0].repeat(temp_array[1])
+        );
+        
+  number -= left_most_digit * Math.pow(10, exponent_factor);
+  console.log(number, exponent_factor, temp_array)
+  return (exponent_factor === 0) ? result : numeralConverter(number, result);
 }
