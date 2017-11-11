@@ -4,7 +4,7 @@
     A C# script for a 7x6 two player Connect4 game
     
   check it out in action! simply go to the link and click run. 
-  repl: https://repl.it/OEIN/5
+  repl: https://repl.it/OEIN/6
   
   contact: davucan@gmail.com
 */
