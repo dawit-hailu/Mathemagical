@@ -1,5 +1,5 @@
 /*
-  written: by Dawit Hailu
+  Author: Dawit Hailu
   objective: 
     given two rectangles A and B, 
     with top left coordinates (x, y) and bottom right coordinates (x', y')
