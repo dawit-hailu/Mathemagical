@@ -1,7 +1,7 @@
 /*
   written by: Dawit Hailu
   objective:
-    given given an Integer, return coresponding Roman Numeral representation
+    given given an Integer, return coresponding Roman Numeral representation where 0 < n < 100,000.
     simple eg: 10 >> "X"
     
     check it out in action! simply go to the link and click run.
@@ -38,16 +38,16 @@ function numeralConverter(input_number, result) {
 
   result += (temp_array[1] == 4) ?
         (
-          roman_symbol_reference[exponent_factor][0]
-          + roman_symbol_reference[temp_array[0] + 
+          roman_symbol_reference[exponent_factor][0] +
+          roman_symbol_reference[temp_array[0] + 
           exponent_factor][1 - temp_array[0]]
         ) 
         :
         (
-          roman_symbol_reference[exponent_factor][1].repeat(temp_array[0])  + roman_symbol_reference[exponent_factor][0].repeat(temp_array[1])
+          roman_symbol_reference[exponent_factor][1].repeat(temp_array[0]) +
+          roman_symbol_reference[exponent_factor][0].repeat(temp_array[1])
         );
         
   number -= left_most_digit * Math.pow(10, exponent_factor);
-  console.log(number, exponent_factor, temp_array)
   return (exponent_factor === 0) ? result : numeralConverter(number, result);
 }
