@@ -1,5 +1,5 @@
 /*
-  written by: Dawit Hailu
+  Author: Dawit Hailu
   objective:
     given given an Integer, return coresponding Roman Numeral representation where 0 < n < 100,000.
     simple eg: 10 >> "X"
